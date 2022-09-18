@@ -22,8 +22,8 @@
 
 .formLabel:hover,
 .formLabel:focus {
-    transform: scale(1.05);
-    color: rgb(248, 9, 9);
+    transform: scale(1.02);
+    color: rgb(0, 118, 191);
 }
 
 .formInput {
@@ -50,6 +50,6 @@
 }
 
 .formBtn:hover, .formBtn:focus {
-    transform: scale(1.05);
-    color:rgb(248, 9, 9);
+    transform: scale(1.02);
+    color:rgb(0, 118, 191);
 }
