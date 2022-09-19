@@ -1,10 +1,18 @@
 import { useState } from 'react';
 import { nanoid } from "nanoid";
+import { addContact } from "../../redux/actions";
+import { useDispatch } from "react-redux";
 import styles from './ContactForm.module.css';
 
-export default function ContactForm({ onSubmit }) {
+export default function ContactForm() {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
+
+    const dispatch = useDispatch(); 
+
+    const formSubmit = data => {
+        dispatch(addContact(data));
+    };
 
     const handleSubmit = evt => {
         evt.preventDefault();
@@ -13,7 +21,7 @@ export default function ContactForm({ onSubmit }) {
             name,
             number
         }
-        onSubmit(data);
+        formSubmit(data);
         resetForm();
     }
 

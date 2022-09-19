@@ -12,7 +12,7 @@ export const contactsReducer = createReducer(
         filter: '',
     }, {
         [addContact]: (state, action) => {
-            const isNameExist = state.items.find(contact => contact.name === action.payload.name);
+            const isNameExist = state.items.find(contact => contact.name.toLowerCase() === action.payload.name.toLowerCase());
             isNameExist ? alert(`${action.payload.name} is already in contacts`) : state.items.push(action.payload);
             window.localStorage.setItem("contacts", JSON.stringify(state.items));
         },
